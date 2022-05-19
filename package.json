@@ -1,0 +1,24 @@
+{
+  "name": "repos-dev",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node ./src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Schabarum/repos-dev.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Schabarum/repos-dev/issues"
+  },
+  "homepage": "https://github.com/Schabarum/repos-dev#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
