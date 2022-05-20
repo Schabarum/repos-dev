@@ -1,8 +1,8 @@
-let alunoService = require('..service/aluno')
+let alunoService = require('../services/aluno')
 
 const getAlunos = async (req, res, next) => {
     try{
-        await alunoService.getAlunos(req.params)
+        await alunoService.getAlunos()
             .then(ret => res.status(201).send(ret))
             .catch(err => res.status(500).send(err))
     }catch (err) {
@@ -10,4 +10,15 @@ const getAlunos = async (req, res, next) => {
     }
 }
 
+const postAlunos = async(req, res, next) => {
+    try{    
+        await alunoService.postAlunos(req.body)
+            .then(ret => res.status(201).send(ret))
+            .catch(err => res.status(500).send(err))
+    }catch (err){
+        next(err)
+    }
+}
+
+module.exports.postAlunos = postAlunos
 module.exports.getAlunos = getAlunos
