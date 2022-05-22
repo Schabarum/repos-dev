@@ -20,5 +20,16 @@ const postAlunos = async(req, res, next) => {
     }
 }
 
+const deleteAlunos = async (req, res, next) => {
+    try{
+        await alunoService.deleteAlunos(req.params)
+            .then(ret => statusbar(201).send(ret))
+            .catch(err => res.status(500).send(err))
+    }catch(err){
+        next(err)
+    }
+}
+
 module.exports.postAlunos = postAlunos
 module.exports.getAlunos = getAlunos
+module.exports.deleteAlunos = deleteAlunos
